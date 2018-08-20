@@ -9,3 +9,7 @@ export const getBannerPictures = params =>{
 export const getNewList = params => {
     return axios.get('/api/getnewslist').then(res=>res.data)
 }
+//获取新闻列表详情数据
+export const getNewsDetail = params =>{
+    return axios.get(`/api/getnew/${params}`).then(res => res.data)
+}

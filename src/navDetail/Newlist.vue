@@ -2,17 +2,15 @@
   <div class="newList">
     <ul class="mui-table-view">
       <li class="mui-table-view-cell mui-media" v-for="item in newLists " :key="item.id">
-        <a href="javascript:;">
+<router-link :to="{ path: '/home/newlist/newsdetail', query: { newId: item.id }}">
           <img class="mui-media-object mui-pull-left" :src="item.img_url">
           <div class="mui-media-body">
             <h5>{{item.title}}</h5>
             <span class="mui-pull-left">发表时间:{{item.add_time |formatTime}}</span>
             <span class="mui-pull-right">点击:{{item.click}}次</span>
-
           </div>
-        </a>
+        </router-link>
       </li>
-
     </ul>
   </div>
 </template>
@@ -28,7 +26,6 @@
     },
     created() {
       getNewList().then(res => {
-        console.log(res)
         if (res.status === 0) {
           this.newLists = res.message
         }

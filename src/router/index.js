@@ -10,6 +10,7 @@ import Leavemessage from '../navDetail/Leavemessage.vue'
 import Sharepicture from '../navDetail/Sharepicture.vue'
 import Shopping from '../navDetail/Shopping.vue'
 import Videolist from '../navDetail/Videolist.vue'
+import NewsDetail from '../navDetail/NewsDetail.vue'
 Vue.use(Router)
 export default new Router({
   linkActiveClass: 'mui-active',
@@ -66,6 +67,11 @@ export default new Router({
        path: '/home/videolist',
        component: Videolist,
        name: 'videolist'
+     },
+     {
+       path: '/home/newlist/newsdetail',
+       component: NewsDetail,
+       name: 'newsdetail'
      }
 
   ]
