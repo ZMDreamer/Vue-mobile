@@ -1,6 +1,6 @@
 <template>
   <div class="newDetail">
-      <!-- 页面头部新闻 -->
+    <!-- 页面头部新闻 -->
     <div class="header mui-clearfix">
       <h4>{{newsDetail.title}}</h4>
       <span class="mui-pull-left">发表时间:{{newsDetail.add_time | formatTime}}</span>
@@ -10,9 +10,12 @@
     <div class="content" v-html="newsDetail.content">
     </div>
     <!-- 评论模块 -->
+    <comment :rid = '$route.query.newId'></comment>
+    
   </div>
 </template>
 <script>
+import comment from '../subcomments/Comment'
   import {
     getNewsDetail
   } from '../api'
@@ -25,7 +28,6 @@
     created() {
       let newId = this.$route.query.newId
       getNewsDetail(newId).then(res => {
-        console.log(res)
         if (res.status === 0) {
           this.newsDetail = res.message[0]
         }
@@ -45,12 +47,15 @@
           month + '-' + day
       }
     }
-
+    ,
+    //注册评论子组件
+    components:{comment}
   }
 
 </script>
 <style lang="scss" scoped>
   .newDetail {
+    list-style: none;
     .header {
       padding: 15px 5px;
       text-align: center;
@@ -64,9 +69,10 @@
         color: #0378f4;
       }
     }
-    .content{
-        padding: 10px 5px;
+    .content {
+      padding: 10px 5px;
     }
+    
   }
 
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div class="home">
     <!-- 轮播图 -->
-      <mt-swipe :auto="4000" class = "swiper">
-        <mt-swipe-item v-for="(item,index) in bannerData" :key='index'>
-          <a :href='item.url'>
-            <img :src='item.img' alt="">
-          </a>
-        </mt-swipe-item>
-      </mt-swipe>
+    <mt-swipe :auto="4000" class="swiper">
+      <mt-swipe-item v-for="(item,index) in bannerData" :key='index'>
+        <a :href='item.url'>
+          <img :src='item.img' alt="">
+        </a>
+      </mt-swipe-item>
+    </mt-swipe>
     <!-- 快速导航部分 -->
     <div class="navBar">
       <ul class="mui-table-view mui-grid-view mui-grid-9">

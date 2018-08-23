@@ -11,6 +11,9 @@ import Sharepicture from '../navDetail/Sharepicture.vue'
 import Shopping from '../navDetail/Shopping.vue'
 import Videolist from '../navDetail/Videolist.vue'
 import NewsDetail from '../navDetail/NewsDetail.vue'
+import GoodsDetail from '../goodDetail/GoodsDetail.vue'
+import IntrGood from '../goodDetail/IntroductionGood.vue'
+import GoodComments from '../goodDetail/GoodComments.vue'
 Vue.use(Router)
 export default new Router({
   linkActiveClass: 'mui-active',
@@ -63,6 +66,21 @@ export default new Router({
       component: Shopping,
       name: 'shopping'
     },
+    {
+      path: '/home/shopping/:id',
+      component: GoodsDetail,
+      name: 'goodsdetail'
+    },
+    {
+      path: '/home/shopping/goodIntr/:id',
+      component: IntrGood,
+      name: 'intrgood'
+    },
+      {
+        path: '/home/shopping/goodCmt/:id',
+        component: GoodComments,
+        name: 'goodcomment'
+      },
      {
        path: '/home/videolist',
        component: Videolist,

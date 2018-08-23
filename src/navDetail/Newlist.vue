@@ -2,7 +2,7 @@
   <div class="newList">
     <ul class="mui-table-view">
       <li class="mui-table-view-cell mui-media" v-for="item in newLists " :key="item.id">
-<router-link :to="{ path: '/home/newlist/newsdetail', query: { newId: item.id }}">
+        <router-link :to="{ path: '/home/newlist/newsdetail', query: { newId: item.id }}">
           <img class="mui-media-object mui-pull-left" :src="item.img_url">
           <div class="mui-media-body">
             <h5>{{item.title}}</h5>
